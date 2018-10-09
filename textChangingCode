@@ -1,0 +1,25 @@
+#made in repl.it with Python
+#takes small part of Kenndy speech and makes it awesome
+
+input_file = open('input')
+input_str = input_file.read()
+
+def makeAwesome(text):
+    output = ""
+    words = text.split(" ")
+    num_words = len(words)
+    for i in range(0, num_words, 1):
+        if words[i] == "the" :
+         words[i]= "th-th-the"
+        if words[i]== "welcome":
+          words[i]= " freaked "
+        if words[i]==  "it":
+          words[i]= " it...LA-DI-DA-DI-DA"
+        elif i % 10==0 and i != 0 :
+          output += " um like "
+        else: 
+          output+= " "
+        output += words[i]
+    return output
+
+print makeAwesome(input_str)
